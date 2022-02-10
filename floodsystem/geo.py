@@ -34,7 +34,7 @@ def rivers_with_station(stations):
     return set_river
 
 def stations_by_river(stations):
-    station_river = dict
+    station_river = {}
     for i in rivers_with_station(stations):
         stationsAtRiver = []
         for station in stations:
@@ -46,14 +46,14 @@ def stations_by_river(stations):
 def no_of_stations(station):
     Station=stations_by_river(station)
     station_no_list=[]
-    for i in Station:
-        station_no_list.append((i, len(Station[i])))
+    for river in Station:
+        station_no_list.append((river, len(Station[river])))
     return station_no_list
 
 def rivers_by_station_number(stations, N):
     stations_numbers=no_of_stations(stations)
     sorted_stations=sorted(stations_numbers.items(), key=lambda y: y[1], reverse=True)
-    output_stations=dict
+    output_stations={}
     i=0
     k=0
     for key, value in sorted_stations:
