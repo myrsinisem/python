@@ -43,3 +43,28 @@ def stations_by_river(stations):
         station_river.update({i: stationsAtRiver})
     return station_river
 
+def no_of_stations(station_river):
+    station_no_list= {}
+    for key, value in station_river():
+        j=0
+        stations=value
+        for i in stations:
+            j+=1
+            station_no_list.update({key:j})
+    return station_no_list
+
+def rivers_by_station_number(stations, N):
+    stations_numbers=no_of_stations(stations)
+    sorted_stations=sorted(stations_numbers.items(), key=lambda y: y[1], reverse=True)
+    output_stations={}
+    i=0
+    k=0
+    for key, value in sorted_stations:
+        if i<N:
+            output_stations.update({key: value})
+            k=value
+        elif k==value:
+            output_stations.update({key:value})
+    return list(output_stations)
+
+
