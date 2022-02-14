@@ -41,16 +41,19 @@ class MonitoringStation:
     
     def typical_range_consistent(self):
         valid=True
-        low=self.typical_range(0)
-        high=self.typical_range(1)
-        if self.typical_range==None or low>high:
+        if self.typical_range==None:
             valid=False
+        else:
+            low=self.typical_range[0]
+            high=self.typical_range[1]
+            if low>high:
+                valid=False
         return valid
 
 def inconsistent_typical_range_stations(stations):
-    inconsistent_stations=()
+    inconsistent_stations=[]
     for i in stations:
         j= i.typical_range_consistent()
-        if j==True:
+        if j==False:
             inconsistent_stations.append(i.name)
     return inconsistent_stations
