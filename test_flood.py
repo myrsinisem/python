@@ -1,6 +1,7 @@
 from ast import Continue
 import floodsystem.flood 
 from floodsystem.stationdata import build_station_list
+from floodsystem.station import MonitoringStation
 
 
 def test_stations_level_over_threshhold():
