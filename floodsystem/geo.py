@@ -62,3 +62,20 @@ def rivers_by_station_number(stations,N):
         else:
             boo =False
     return listofNumberStationsSorted[:N]
+
+def towns_with_station(stations):
+    'Return a set with the names of the rivers with a monitoring station with no repeats'
+    set_river=set()
+    for station in stations:
+        set_river.add(station.town)
+    return set_river
+
+def stations_by_town(stations):
+    station_town = {}
+    for i in towns_with_station(stations):
+        stationsAttown = []
+        for station in stations:
+            if i == station.town:
+                stationsAttown.append(station.name)
+        station_town.update({i: stationsAttown})
+    return station_town    
