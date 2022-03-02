@@ -4,7 +4,7 @@
 """Unit test for the stationdata module"""
 
 import datetime
-from xml.dom.xmlbuilder import _DOMInputSourceCharacterStreamType
+#from xml.dom.xmlbuilder import _DOMInputSourceCharacterStreamType
 
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.stationdata import build_station_list
