@@ -5,7 +5,7 @@ from floodsystem.station import MonitoringStation
 stations = build_station_list
 
 def test_stations_level_over_threshhold():
-    test_list=[]
+    test_list = []
     for station in stations:
         if station.relative_water_level() == None:
             continue
