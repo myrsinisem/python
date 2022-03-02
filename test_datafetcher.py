@@ -41,6 +41,7 @@ def test_build_station_list():
 
 def test_fetch_measure_levels():
     now = datetime.datetime.utcnow()
+    now = dateutil.parser.parse()
     dt = 3 
     start = now - dt
     assert now != start 
