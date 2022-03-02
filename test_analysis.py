@@ -14,4 +14,4 @@ station=stations[0]
 dt = 2
 dates, levels = fetch_measure_levels(station.measure_id, dt=datetime.timedelta(days=dt))
 poly, dx=polyfit(dates,levels, 4)
-assert isinstance(dx, float)
+assert isinstance(dx, int)
