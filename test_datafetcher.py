@@ -45,23 +45,6 @@ def test_fetch_measure_levels(measure_id,dt):
     dt =0
     assert now == start 
 
-    url_base = measure_id
-    url_options = "/readings/?_sorted&since=" + start.isoformat() + 'Z'
-    url = url_base + url_options
-    data = fetch(url)
-
-    dates,levels = []
-    for measure in data['items']:
-    
-        d = dateutil.parser.parse(measure['dateTime'])
-
-        # Append data
-        dates.append(d)
-        levels.append(measure['value'])
-
-        assert len(dates) > 0
-        assert len(levels) > 0
-
 
 
 
