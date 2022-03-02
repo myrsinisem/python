@@ -2,6 +2,7 @@ from ast import Continue
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.station import MonitoringStation
 from floodsystem.flood import stations_level_over_threshold, stations_highest_rel_level
+from floodsystem.datafetcher import fetch_latest_water_level_data, fetch_station_data
      
 stations = build_station_list()
 tol = 0.2
