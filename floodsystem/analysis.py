@@ -7,7 +7,7 @@ def polyfit(dates, levels, p):
     dates2=()
     for i in dates_as_num:
         j=i-a
-        dates2.append(j)
+        dates2.append[j]
         
     # Create set of 10 data points on interval (0, 2)
     
