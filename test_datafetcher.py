@@ -39,7 +39,7 @@ def test_build_station_list():
     assert len(dates10) == len(levels10)
     assert len(dates10) > len(levels2)
 
-def test_fetch_measure_levels(dt):
+def test_fetch_measure_levels():
     now = datetime.datetime.utcnow()
     start = now - dt
     dt =0
