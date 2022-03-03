@@ -31,7 +31,7 @@ def test_plot_level_with_fit():
     river = "River X"
     town = "My Town"
     s = MonitoringStation(s_id, m_id, label, coord, trange, river, town)
-    s.set_latestLevel(1)
+    #s.set_latestLevel(1)
     levels = [216, 125, 64, 27, 16, 1]
     dates = date.num2date([6, 5, 4, 3, 2, 1])
     p=3
