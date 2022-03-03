@@ -3,6 +3,8 @@ from datetime import datetime, timedelta
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.analysis import polyfit
+import numpy as np
+import matplotlib.dates as date
 
 
 def plot_water_levels(station,dates,levels):
@@ -16,8 +18,10 @@ def plot_water_levels(station,dates,levels):
     plt.show()
 
 def plot_water_level_with_fit(station, dates, levels, p):
-    dates_as_num=plt.dates.date2num(dates)
-    a=dates_as_num[0]#
+    print (dates)
+    dates_as_num=date.date2num(dates)
+    print (dates_as_num)
+    a=dates_as_num[0]
     dates2=()
     for i in dates_as_num:
         j=i-a

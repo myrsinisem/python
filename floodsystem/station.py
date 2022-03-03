@@ -38,6 +38,8 @@ class MonitoringStation:
         d += "   typical range: {}".format(self.typical_range)
         return d
     
+    def get_measureID(self):
+        return self.measure_id
     def typical_range_consistent(self):
         valid=True
         if self.typical_range==None:
@@ -67,5 +69,3 @@ def inconsistent_typical_range_stations(stations):
         if j==False:
             inconsistent_stations.append(i.name)
     return inconsistent_stations
-
-
