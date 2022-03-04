@@ -12,20 +12,19 @@ stationsByTown = stations_by_town(stations)
 tol=0.9
 update_water_levels(stations)
 stations_high=stations_level_over_threshold(stations, tol)
-print (stations_high)
 sta_high=[]
 for station in stations_high:
-    sta_high.append(station.name)
+    sta_high.append(station[0].name)
 tol=0.8
 stations_medium=stations_level_over_threshold(stations, tol)
 sta_medium=[]
 for station in stations_medium:
-    sta_medium.append(station.name)
+    sta_medium.append(station[0].name)
 tol=0.7
 stations_low=stations_level_over_threshold(stations, tol)
 sta_low=[]
 for station in stations_low:
-    sta_low.append(station.name)
+    sta_low.append(station[0].name)
 risk=[]
 for town in stationsByTown:
     total=0
@@ -38,12 +37,16 @@ for town in stationsByTown:
             total+=1
     average=total/len(stationsByTown[town])
     if average>2.7:
-        risk.append(town, "severe")
+        x=[town, ":severe"]
+        risk.append(x)
     elif average>2:
-        risk.append(town, "high")
+        x=[town, ":high"]
+        risk.append(x)
     elif average>1:
-        risk.append(town, "moderate")
+        x=[town, ":moderate"]
+        risk.append(x)
     elif average>0.5:
-        risk.append(town, "low")
+        x=[town, ":low"]
+        risk.append(x)
 
 print (risk)
