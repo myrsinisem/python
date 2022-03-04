@@ -1,6 +1,6 @@
 import numpy as np
 
-from floodsystem.plot import plot_water_levels, plot_water_level_with_fit
+from floodsystem.plot import plot_water_levels
 from floodsystem.station import MonitoringStation
 import matplotlib.dates as date
 
